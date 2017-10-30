@@ -8,6 +8,14 @@ public class WelcomeController {
 
     @GetMapping("/")
     public String sayHello() {
-        return "hello";
+        return "mayur";
+    }
+
+    @GetMapping("/myname")
+    public MyName myName() {
+        MyName myName = new MyName();
+        myName.setFirstName("Mayur");
+        myName.setLastName("Santani");
+        return myName;
     }
 }
