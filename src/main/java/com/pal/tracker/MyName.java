@@ -3,6 +3,8 @@ package com.pal.tracker;
 public class MyName {
     private String firstName;
 
+    private String lastName;
+
     public String getFirstName() {
         return firstName;
     }
@@ -19,5 +21,4 @@ public class MyName {
         this.lastName = lastName;
     }
 
-    private String lastName;
 }
