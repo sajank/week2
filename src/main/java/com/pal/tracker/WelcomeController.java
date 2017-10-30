@@ -5,12 +5,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.json.*;
+
 @RestController
 public class WelcomeController {
 
     @PostMapping("/")
-    public String sayHello(@RequestBody MyName myname) {
-        return "Hello Mr. " +myname.getFirstName() + " " + myname.getLastName();
+    public Response sayHello(@RequestBody MyName myname) {
+        return new Response("Hello Mr. " +myname.getFirstName() + " " + myname.getLastName());
     }
 
     @GetMapping("/myname")
