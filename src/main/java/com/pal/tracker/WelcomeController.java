@@ -1,14 +1,16 @@
 package com.pal.tracker;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 public class WelcomeController {
 
-    @GetMapping("/")
-    public String sayHello() {
-        return "mayur";
+    @PostMapping("/")
+    public String sayHello(@RequestBody MyName myname) {
+        return "Hello Mr. " +myname.getFirstName() + " " + myname.getLastName();
     }
 
     @GetMapping("/myname")
