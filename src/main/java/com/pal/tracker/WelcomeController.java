@@ -18,4 +18,12 @@ public class WelcomeController {
         myName.setLastName("Santani");
         return myName;
     }
+
+    @GetMapping("/xing/myhi")
+    public MyName sayHi() {
+        MyName xingName = new MyName();
+        xingName.setFirstName("Xing");
+        xingName.setLastName("Liu");
+        return xingName;
+    }
 }
