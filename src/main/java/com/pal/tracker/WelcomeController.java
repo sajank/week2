@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @RestController
@@ -23,8 +24,7 @@ public class WelcomeController {
         response.setAge(22.0);
 
         LocalDateTime currentTime = LocalDateTime.now();
-        LocalDate date = currentTime.toLocalDate();
-        response.setDob(date);
+        response.setDob(currentTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
         return response;
     }
 

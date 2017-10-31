@@ -1,11 +1,11 @@
 package com.pal.tracker;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Response {
     private String name;
     private Double age;
-    private LocalDate dob;
+    private String dob;
 
     public Response() {}
 
@@ -30,11 +30,11 @@ public class Response {
         this.age = age;
     }
 
-    public LocalDate getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(LocalDate dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 }
