@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.json:json")
 
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
