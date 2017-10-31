@@ -1,5 +1,4 @@
 import com.pal.tracker.PalTrackerApplication;
-import javafx.application.Application;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,7 +39,7 @@ public class WelcomeControllerTests {
     }
 
     @Test
-    public void getTire() throws Exception {
+    public void testingPost() throws Exception {
         String request = "{\"firstName\" : \"Mayur\",\"lastName\" : \"Santani\"}";
         mockMvc.perform(post("http://localhost:8080" + "/")
                 .content(request)
