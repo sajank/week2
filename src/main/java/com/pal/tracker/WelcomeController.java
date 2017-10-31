@@ -7,12 +7,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.json.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @RestController
 public class WelcomeController {
 
     @PostMapping("/")
     public Response sayHello(@RequestBody MyName myname) {
-        return new Response("Hello Mr. " +myname.getFirstName() + " " + myname.getLastName());
+        Response response = new Response();
+        response.setName(myname.getFirstName() + " " + myname.getLastName());
+        response.setAge(22.0);
+
+        LocalDateTime currentTime = LocalDateTime.now();
+        LocalDate date = currentTime.toLocalDate();
+        response.setDob(date);
+        return response;
     }
 
     @GetMapping("/myname")

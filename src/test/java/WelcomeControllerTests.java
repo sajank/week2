@@ -46,6 +46,6 @@ public class WelcomeControllerTests {
                 .contentType(contentType))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(contentType))
-                .andExpect(jsonPath("response", is("Hello Mr. Mayur Santani")));
+                .andExpect(jsonPath("name", is("Mayur Santani")));
     }
 }
