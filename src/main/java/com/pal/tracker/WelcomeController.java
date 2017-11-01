@@ -22,6 +22,7 @@ public class WelcomeController {
     private String message;
 
     public WelcomeController(@Value("${message}") String message) {
+        log.info("Constructor: 'message' env variable initialized");
         this.message = message;
     }
 
@@ -32,7 +33,9 @@ public class WelcomeController {
         response.setAge(22.0);
 
         LocalDateTime currentTime = LocalDateTime.now();
-        response.setDob(currentTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        String dob = currentTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        response.setDob(dob);
+        log.info("sayHello(): Converted LocalDateTime to the ISO 8601 format: " + dob);
         return response;
     }
 
@@ -43,6 +46,7 @@ public class WelcomeController {
         log.debug("*************881");
         log.debug("*************882");
         MyName myName = new MyName();
+        log.info("myName(): 'message' env variable set as FirstName");
         myName.setFirstName(this.message);
         myName.setLastName("Santani");
         return myName;
@@ -50,6 +54,7 @@ public class WelcomeController {
 
     @GetMapping("/xing/myhi")
     public MyName sayHi() {
+        log.info("sayHi(): Dummy 'MyName' set to Xing Liu");
         MyName xingName = new MyName();
         xingName.setFirstName("Xing");
         xingName.setLastName("Liu");

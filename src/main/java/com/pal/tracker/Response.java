@@ -1,13 +1,17 @@
 package com.pal.tracker;
 
-import java.time.LocalDateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Response {
+    static Logger log = LoggerFactory.getLogger(Response.class.getName());
     private String name;
     private Double age;
     private String dob;
 
-    public Response() {}
+    public Response() {
+        log.debug("Response(): age set to Double value.");
+    }
 
     public Response(String response) {
         this.name = response;
