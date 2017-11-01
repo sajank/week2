@@ -22,3 +22,7 @@ tasks.withType(Test) {
         showStandardStreams true
     }
 }
+
+bootRun.environment(["message":"hello"])
+
+test.environment(["message":"Xing"])

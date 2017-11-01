@@ -38,28 +38,40 @@ public class WelcomeControllerTests {
         this.mockMvc = webAppContextSetup(webApplicationContext).build();
     }
 
-    //testing if gives correct response
-    @Test
-    public void postTest() throws Exception {
-        String request = "{\"firstName\" : \"Mayur\",\"lastName\" : \"Santani\"}";
-        mockMvc.perform(post("http://localhost:8080" + "/")
-                .content(request)
-                .contentType(contentType))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(contentType))
-                .andExpect(jsonPath("name", is("Mayur Santani")));
-    }
+//    //testing if gives correct response
+//    @Test
+//    public void postTest() throws Exception {
+//        String request = "{\"firstName\" : \"Mayur\",\"lastName\" : \"Santani\"}";
+//        mockMvc.perform(post("http://xtest-leafiest-hubble.cfapps.i")
+//                .content(request)
+//                .contentType(contentType))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(contentType))
+//                .andExpect(jsonPath("name", is("Mayur Santani")));
+//    }
 
     // Negative testing
     // whether response to <FirstName: Mayur, LastName: Santani> does not return "Hello Mr. Xing Liu"
+//    @Test
+//    public void negativeTest() throws Exception {
+//        String request = "{\"firstName\" : \"Mayur\",\"lastName\" : \"Santani\"}";
+//        mockMvc.perform(post("http://localhost:8080" + "/")
+//                .content(request)
+//                .contentType(contentType))
+//                .andExpect(status().isOk())
+//                .andExpect(content().contentType(contentType))
+//                .andExpect(jsonPath("name", not("Hello Mr. Xing Liu")));
+//    }
+
+    //testing if gives correct response
     @Test
-    public void negativeTest() throws Exception {
+    public void getTest() throws Exception {
         String request = "{\"firstName\" : \"Mayur\",\"lastName\" : \"Santani\"}";
-        mockMvc.perform(post("http://localhost:8080" + "/")
+        mockMvc.perform(get("http://xtest-leafiest-hubble.cfapps.io/myname")
                 .content(request)
                 .contentType(contentType))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(contentType))
-                .andExpect(jsonPath("name", not("Hello Mr. Xing Liu")));
+                .andExpect(jsonPath("firstName", is("Mayur")));
     }
 }

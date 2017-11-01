@@ -2,6 +2,7 @@ package com.pal.tracker;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,14 @@ import java.time.LocalDateTime;
 @RestController
 public class WelcomeController {
 
+
     static Logger log = LoggerFactory.getLogger(WelcomeController.class.getName());
+
+    private String message;
+
+    public WelcomeController(@Value("${message}") String message) {
+        this.message = message;
+    }
 
     @PostMapping("/")
     public Response sayHello(@RequestBody MyName myname) {
@@ -35,7 +43,7 @@ public class WelcomeController {
         log.debug("*************881");
         log.debug("*************882");
         MyName myName = new MyName();
-        myName.setFirstName("Mayur");
+        myName.setFirstName(this.message);
         myName.setLastName("Santani");
         return myName;
     }
