@@ -1,0 +1,6 @@
+---
+applications:
+- name: chicago
+  path: build\libs\week2.jar
+  env:
+    message: Hello from Cloud Foundry
