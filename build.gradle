@@ -8,11 +8,13 @@ repositories {
 }
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.json:json")
-
-
     testCompile("org.springframework.boot:spring-boot-starter-test")
+
+    compile('org.springframework.boot:spring-boot-starter-jersey')
+    runtime('mysql:mysql-connector-java')
 }
 
 tasks.withType(Test) {
@@ -23,6 +25,6 @@ tasks.withType(Test) {
     }
 }
 
-bootRun.environment(["message":"hello"])
-
+bootRun.environment(["message":"hello"]);
+//bootRun.environment(["message":"hello", "url":"jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false"])
 test.environment(["message":"Xing"])

@@ -1,6 +1,6 @@
 ---
 applications:
-- name: chicago
+- name: xTest
   path: build\libs\week2.jar
   env:
     message: Hello from Cloud Foundry
