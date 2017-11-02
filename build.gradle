@@ -10,6 +10,9 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.json:json")
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    runtime('mysql:mysql-connector-java')
+    compile('org.springframework.boot:spring-boot-starter-jersey')
 
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
@@ -23,6 +26,6 @@ tasks.withType(Test) {
     }
 }
 
-bootRun.environment(["message":"hello"])
+bootRun.environment(["message":"hello", "dburl":"jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false", "dbusername":"root", "dbpwd":"root"])
 
-test.environment(["message":"Xing"])
+test.environment(["message":"Xing", "dburl":"jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false", "dbusername":"root", "dbpwd":"root"])
