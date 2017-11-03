@@ -45,12 +45,11 @@ public class ChicagoTableController {
                 .target(REST_SERVICE_URL)
                 .request()
                 .get();
+        client.close();
 
         Map<String, Object> jsonResponse = response.readEntity(Map.class);
         JSONObject json = new JSONObject(jsonResponse);
         JSONArray jsonarr = json.getJSONArray("results");
-        // the first location in the array has all the information in "results". So we need to convert
-        // that to a jsonObject to get to the information inside it.
         json = new JSONObject(jsonarr.get(0).toString());
         String address = json.getString("formatted_address");
 
