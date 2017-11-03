@@ -4,3 +4,6 @@ applications:
   path: build\libs\week2.jar
   env:
     message: Hello from Cloud Foundry
+    url : jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false
+    username : b4bb55138f0476
+    password : 3f40a8cc

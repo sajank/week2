@@ -26,6 +26,13 @@ tasks.withType(Test) {
     }
 }
 
-bootRun.environment(["message":"hello"]);
-//bootRun.environment(["message":"hello", "url":"jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false"])
-test.environment(["message":"Xing"])
+//bootRun.environment(["message":"hello"]);
+bootRun.environment(["message":"hello",
+                     "url": "jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false",
+                     "username":"root",
+                     "password":"root"])
+
+test.environment(["message":"Xing",
+                  "url": "jdbc:mysql://localhost:3306/cf_migrations_demo?useSSL=false",
+                  "username":"root",
+                  "password":"root"])
