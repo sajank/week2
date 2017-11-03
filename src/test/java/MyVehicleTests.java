@@ -43,7 +43,6 @@ public class MyVehicleTests {
         if ((response == null) || (response.getStatus() != 200)){
             log.error("Test case name: getTest, Result: " + FAIL);
         } else {
-            System.out.println();
             ArrayList jArray = response.readEntity(ArrayList.class);
             LinkedHashMap jsonResponse = (LinkedHashMap) jArray.get(0);
             assertEquals(jsonResponse.get("tire_num"), 92);
@@ -67,7 +66,6 @@ public class MyVehicleTests {
         if ((response == null) || (response.getStatus() != 200)){
             log.error("Test case name: getTest, Result: " + FAIL);
         } else {
-            System.out.println(">>>>>>>>>>>>>>>>" + response.getStatus());
             Map<String, Object> jsonResponse = response.readEntity(Map.class);
             assertEquals(992, jsonResponse.get("tire_num"));
             assertEquals(132, jsonResponse.get("vehicleId"));
