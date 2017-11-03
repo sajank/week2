@@ -75,13 +75,8 @@ public class MyVehicleController {
             JSONArray jArray = a.getJSONArray("results");
             a = new JSONObject(jArray.get(0).toString());
             address = a.getString("formatted_address");
-//            for (Map.Entry<String, Object> e : jsonResponse.entrySet()) {
-//                System.out.println(address + "\n" + e.getKey() + ": " + e.getValue());
-//            }
-//            address = jsonResponse.get();
-//            log.info("testGet() passed");
         }
-//        return address;
+        this.client.close();
         return address;
     }
 }
