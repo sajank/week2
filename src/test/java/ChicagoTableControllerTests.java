@@ -27,11 +27,11 @@ public class ChicagoTableControllerTests {
 
     static Logger log = LoggerFactory.getLogger(ChicagoTableControllerTests.class.getName());
 
+    // TODO: Convert the REST_SERVICE_URL to an environment variable.
     private String REST_SERVICE_URL = "http://chicago.cfapps.io/";
 
     @Before
     public void setup() throws Exception {
-//        client = ClientBuilder.newClient();
     }
 
     @Test
